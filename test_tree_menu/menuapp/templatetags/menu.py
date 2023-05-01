@@ -1,3 +1,6 @@
+'''
+Implements a custom template for output tree menus.
+'''
 from collections import deque
 from typing import Optional
 
