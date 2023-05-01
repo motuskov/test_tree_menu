@@ -1,0 +1,18 @@
+{% load static %}
+
+<link href="{% static 'menuapp/css/menu.css' %}" rel="stylesheet">
+
+<div class="col-3">
+    {% if menu %}
+        <h3>{{ menu.name }}</h3>
+        <ul class="list-unstyled">
+            {% for menu_item in menu.childs %}
+                {% include "tags/menu_item.html" with menu_item=menu_item %}
+            {% endfor %}
+        </ul>
+    {% else %}
+        <div class="alert alert-danger" role="alert">
+            Menu output error
+        </div>
+    {% endif %}
+</div>

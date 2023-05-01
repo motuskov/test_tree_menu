@@ -1,0 +1,29 @@
+{% load static %}
+
+<li class="mt-1">
+    {% if menu_item.childs %}
+        <button type="button"
+                class="btn btn-sm btn-toggle border-0 px-0 {% if not menu_item.open %}collapsed{% endif %}"
+                data-bs-toggle="collapse"
+                data-bs-target="#children-{{ menu_item.id }}"
+                aria-expanded="{{ menu_item.open|lower }}">
+            <img src="{% static 'menuapp/img/chevron-right.svg' %}">
+        </button>
+    {% endif %}
+    {% if menu_item.path %}
+        <a href="{{ menu_item.path }}"
+           class="{% if menu_item.current %}link-success{% endif %}">
+            {{ menu_item.name }}
+        </a>
+    {% else %}
+        {{ menu_item.name }}
+    {% endif %}
+    {% if menu_item.childs %}
+        <ul class="list-unstyled ps-3 collapse {% if menu_item.open %}show{% endif %}"
+            id="children-{{ menu_item.id }}">
+            {% for child_item in menu_item.childs %}
+                {% include "tags/menu_item.html" with menu_item=child_item %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+</li>

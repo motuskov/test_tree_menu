@@ -1,0 +1,7 @@
+.btn-toggle img {
+    width: 10px;
+}
+
+.btn-toggle[aria-expanded="true"] img {
+    transform: rotate(90deg);
+}
