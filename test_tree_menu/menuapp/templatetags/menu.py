@@ -35,7 +35,7 @@ def list_to_tree(
         if not items or not parent or items[0].parent_id != parent.id:
             return item
 
-@register.inclusion_tag('tags/menu.html', takes_context=True)
+@register.inclusion_tag('menuapp/tags/menu.html', takes_context=True)
 def draw_menu(
         context: template.context.RequestContext,
         menu_name: str

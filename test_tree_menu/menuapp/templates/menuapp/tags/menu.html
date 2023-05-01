@@ -7,7 +7,7 @@
         <h3>{{ menu.name }}</h3>
         <ul class="list-unstyled">
             {% for menu_item in menu.childs %}
-                {% include "tags/menu_item.html" with menu_item=menu_item %}
+                {% include "menuapp/tags/menu_item.html" with menu_item=menu_item %}
             {% endfor %}
         </ul>
     {% else %}

@@ -22,7 +22,7 @@
         <ul class="list-unstyled ps-3 collapse {% if menu_item.open %}show{% endif %}"
             id="children-{{ menu_item.id }}">
             {% for child_item in menu_item.childs %}
-                {% include "tags/menu_item.html" with menu_item=child_item %}
+                {% include "menuapp/tags/menu_item.html" with menu_item=child_item %}
             {% endfor %}
         </ul>
     {% endif %}
