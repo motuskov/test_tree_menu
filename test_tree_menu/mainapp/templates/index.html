@@ -1,0 +1,26 @@
+{% load static %}
+{% load menu %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tree Menu</title>
+        {% block css %}
+            <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+        {% endblock %}
+    </head>
+    <body>
+        <div class="container">
+            <h1>Tree Menu</h1>
+            <div class="row">
+                {% draw_menu 'Pets' %}
+                {% draw_menu 'Cities' %}
+            </div>
+        </div>
+        {% block js %}
+            <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        {% endblock %}
+      </body>
+</html>
